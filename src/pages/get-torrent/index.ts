@@ -1,0 +1,1 @@
+export { GetTorrent } from "./ui";
