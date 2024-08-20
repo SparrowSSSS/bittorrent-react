@@ -1,8 +1,9 @@
 import { Download } from "@/pages/download";
-import { GetTorrent } from "@/pages/get-torrent";
+import { Home } from "@/pages/home";
+import { paths } from "@/shared/router";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
-    { path: "/", element: <GetTorrent /> },
-    { path: "/download", element: <Download /> }
+    { path: paths.home, element: <Home /> },
+    { path: paths.download, element: <Download /> }
 ]);

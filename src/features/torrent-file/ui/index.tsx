@@ -1,30 +1,23 @@
 import { Upload } from "@mui/icons-material";
 import { HiddenInput } from "./hidden-input";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { StyledButton } from "./styled-button";
-import { uploadFile } from "@/shared/lib/upload-files";
-import { DragEvents } from "@/shared/lib/drag-events";
+import { useUpload, useDragEvents } from "../model";
 
 export const TorrentFile = () => {
     const [buttonHover, setButtonHover] = useState(false);
 
-    const upload = (file?: File) => {
-        if (file) uploadFile(file, window.electronAPI.sendTorrentId);
-    };
+    const { drop, dragEnter, dragLeave, dragOver } =
+        useDragEvents(setButtonHover);
 
-    const DE = useMemo(
-        () => new DragEvents<boolean>(setButtonHover),
-        []
-    );
+    const upload = useUpload();
 
     return (
         <div
-            onDrop={DE.getDragEvent(false, (e) =>
-                upload(e.dataTransfer.files[0])
-            )}
-            onDragOver={DE.getDragEvent(true)}
-            onDragEnter={DE.getDragEvent(true)}
-            onDragLeave={DE.getDragEvent(false)}
+            onDrop={drop}
+            onDragOver={dragOver}
+            onDragEnter={dragEnter}
+            onDragLeave={dragLeave}
         >
             <StyledButton
                 variant="outlined"
