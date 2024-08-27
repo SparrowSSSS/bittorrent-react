@@ -32,7 +32,7 @@ export const Progress: FC<Props> = ({ progress, backgroudColor }) => {
     return (
         <Container backColor={backgroudColor}>
             {progressArr.map((progress) => (
-                <Line position={progress} />
+                <Line key={progress} position={progress} />
             ))}
         </Container>
     );

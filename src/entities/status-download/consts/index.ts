@@ -20,6 +20,10 @@ export const speeds: Dist = {
     bit: {
         value: 1,
         prefix: "бит/с"
+    },
+    null: {
+        value: 0,
+        prefix: "бит/с"
     }
 };
 
@@ -46,7 +50,11 @@ export const times: Dist = {
     },
     mm: {
         value: 1,
-        prefix: "мм."
+        prefix: "мc."
+    },
+    null: {
+        value: 0,
+        prefix: "мc."
     }
 };
 

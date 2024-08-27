@@ -9,7 +9,11 @@ export const ProgressCounter: FC<Props> = ({ progress }) => {
     return (
         <Typography
             variant="h6"
-            sx={{ color: colors.grey[50], marginBottom: "5px" }}
+            sx={{
+                color: colors.grey[50],
+                marginBottom: "5px",
+                textAlign: "center"
+            }}
         >
             {progress} %
         </Typography>

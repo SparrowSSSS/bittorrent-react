@@ -6,10 +6,7 @@ const meta: Meta<typeof Progress> = {
     component: Progress,
     argTypes: {
         progress: {
-            description: "Прогресс в процентах",
-            control: {
-                type: "number"
-            }
+            description: "Прогресс в процентах"
         },
         backgroudColor: {
             control: {

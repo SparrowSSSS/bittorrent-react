@@ -11,6 +11,10 @@ type Story = StoryObj<typeof StatusDownload>;
 
 export const Default: Story = {
     args: {
-        finish: false
+        finish: false,
+        speed: 0,
+        time: 0,
+        pause: false,
+        ready: false
     }
 };
