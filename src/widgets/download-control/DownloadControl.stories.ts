@@ -1,9 +1,20 @@
+import {
+    reactRouterParameters,
+    withRouter
+} from "storybook-addon-remix-react-router";
 import { DownloadControl } from "./ui";
 import type { Meta, StoryObj } from "@storybook/react";
+import { paths } from "@/shared/router";
 
 const meta: Meta<typeof DownloadControl> = {
     title: "DownloadControl",
     component: DownloadControl,
+    decorators: [withRouter],
+    parameters: {
+        reactRouter: reactRouterParameters({
+            routing: { path: paths.download }
+        })
+    },
     args: {
         electronApi: {
             finishDowload(callback) {
